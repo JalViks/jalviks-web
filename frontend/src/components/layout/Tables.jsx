@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Tab, Tabs, Table } from 'react-bootstrap';
+// import './Tables.css'; // Import your CSS file for custom styles
 
 export const Tables = () => {
     const [key, setKey] = useState('averageDeviation');
@@ -15,205 +16,141 @@ export const Tables = () => {
 
     // Render table rows based on the selected tab
     const renderRows = () => {
-        if (key === 'averageDeviation') {
-            return (
-                <>
-                    <tr>
-                        <td>Data 1</td>
-                        {data1.map((value, index) => (
-                            <td key={index}>{value}</td>
-                        ))}
-                    </tr>
-                    <tr>
-                        <td>Data 2</td>
-                        {data2.map((value, index) => (
-                            <td key={index}>{value}</td>
-                        ))}
-                    </tr>
-                    <tr>
-                        <td>Data 3</td>
-                        {data3.map((value, index) => (
-                            <td key={index}>{value}</td>
-                        ))}
-                    </tr>
-                </>
-            );
-        } else if (key === 'frequencyProbability') {
-            return (
-                <>
-                    <tr>
-                        <td>Data 1</td>
-                        {data1.map((value, index) => (
-                            <td key={index}>{value}</td>
-                        ))}
-                    </tr>
-                    <tr>
-                        <td>Data 2</td>
-                        {data2.map((value, index) => (
-                            <td key={index}>{value}</td>
-                        ))}
-                    </tr>
-                    <tr>
-                        <td>Data 3</td>
-                        {data3.map((value, index) => (
-                            <td key={index}>{value}</td>
-                        ))}
-                    </tr>
-                </>
-            );
-        } else if (key === 'probabilityExceeding') {
-            return (
-                <>
-                    <tr>
-                        <td>Data 1</td>
-                        {data1.map((value, index) => (
-                            <td key={index}>{value}</td>
-                        ))}
-                    </tr>
-                    <tr>
-                        <td>Data 2</td>
-                        {data2.map((value, index) => (
-                            <td key={index}>{value}</td>
-                        ))}
-                    </tr>
-                    <tr>
-                        <td>Data 3</td>
-                        {data3.map((value, index) => (
-                            <td key={index}>{value}</td>
-                        ))}
-                    </tr>
-                </>
-            );
-        } else if (key === 'last5Years') {
-            return (
-                <>
-                    <tr>
-                        <td>last 5</td>
-                        {data1.map((value, index) => (
-                            <td key={index}>{value}</td>
-                        ))}
-                    </tr>
-                    <tr>
-                        <td>Data 2</td>
-                        {data2.map((value, index) => (
-                            <td key={index}>{value}</td>
-                        ))}
-                    </tr>
-                    <tr>
-                        <td>Data 3</td>
-                        {data3.map((value, index) => (
-                            <td key={index}>{value}</td>
-                        ))}
-                    </tr>
-                </>
-            );
-        }
+        return (
+            <>
+                <tr>
+                    <td>Data 1</td>
+                    {data1.map((value, index) => (
+                        <td key={index}>{value}</td>
+                    ))}
+                </tr>
+                <tr>
+                    <td>Data 2</td>
+                    {data2.map((value, index) => (
+                        <td key={index}>{value}</td>
+                    ))}
+                </tr>
+                <tr>
+                    <td>Data 3</td>
+                    {data3.map((value, index) => (
+                        <td key={index}>{value}</td>
+                    ))}
+                </tr>
+            </>
+        );
     };
 
     return (
-        <div className="container md-12">
-
+        <div className="container">
             <Tabs
                 id="controlled-tab-example"
                 activeKey={key}
-                onSelect={(k) => handleTabChange(k)}
-                className="mb-5"
+                onSelect={handleTabChange}
+                className="nav-pills" /* Add nav-pills class here */
             >
                 <Tab eventKey="averageDeviation" title="Average Deviation">
-                    <Table striped bordered hover className="custom-table">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>January</th>
-                                <th>February</th>
-                                <th>March</th>
-                                <th>April</th>
-                                <th>May</th>
-                                <th>June</th>
-                                <th>July</th>
-                                <th>August</th>
-                                <th>September</th>
-                                <th>October</th>
-                                <th>November</th>
-                                <th>December</th>
-                            </tr>
-                        </thead>
-                        <tbody >
-                            {renderRows()}
-                        </tbody>
-                    </Table>
+                    <div className="table-responsive">
+                        <Table striped bordered hover className="small-table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>January</th>
+                                    <th>February</th>
+                                    <th>March</th>
+                                    <th>April</th>
+                                    <th>May</th>
+                                    <th>June</th>
+                                    <th>July</th>
+                                    <th>August</th>
+                                    <th>September</th>
+                                    <th>October</th>
+                                    <th>November</th>
+                                    <th>December</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {renderRows()}
+                            </tbody>
+                        </Table>
+                    </div>
                 </Tab>
                 <Tab eventKey="frequencyProbability" title="Frequency Probability">
-                    <Table striped bordered hover>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>January</th>
-                                <th>February</th>
-                                <th>March</th>
-                                <th>April</th>
-                                <th>May</th>
-                                <th>June</th>
-                                <th>July</th>
-                                <th>August</th>
-                                <th>September</th>
-                                <th>October</th>
-                                <th>November</th>
-                                <th>December</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {renderRows()}
-                        </tbody>
-                    </Table>
+                    <div className="table-responsive">
+                        <Table striped bordered hover className="small-table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>January</th>
+                                    <th>February</th>
+                                    <th>March</th>
+                                    <th>April</th>
+                                    <th>May</th>
+                                    <th>June</th>
+                                    <th>July</th>
+                                    <th>August</th>
+                                    <th>September</th>
+                                    <th>October</th>
+                                    <th>November</th>
+                                    <th>December</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {renderRows()}
+                            </tbody>
+                        </Table>
+                    </div>
                 </Tab>
                 <Tab eventKey="probabilityExceeding" title="Probability of Exceeding">
-                <Table striped bordered hover>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>January</th>
-                                <th>February</th>
-                                <th>March</th>
-                                <th>April</th>
-                                <th>May</th>
-                                <th>June</th>
-                                <th>July</th>
-                                <th>August</th>
-                                <th>September</th>
-                                <th>October</th>
-                                <th>November</th>
-                                <th>December</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {renderRows()}
-                        </tbody>
-                    </Table>
+                    <div className="table-responsive">
+                        <Table striped bordered hover className="small-table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>January</th>
+                                    <th>February</th>
+                                    <th>March</th>
+                                    <th>April</th>
+                                    <th>May</th>
+                                    <th>June</th>
+                                    <th>July</th>
+                                    <th>August</th>
+                                    <th>September</th>
+                                    <th>October</th>
+                                    <th>November</th>
+                                    <th>December</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {renderRows()}
+                            </tbody>
+                        </Table>
+                    </div>
                 </Tab>
                 <Tab eventKey="last5Years" title="Last 5 Years">
-                <Table striped bordered hover>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>January</th>
-                                <th>February</th>
-                                <th>March</th>
-                                <th>April</th>
-                                <th>May</th>
-                                <th>June</th>
-                                <th>July</th>
-                                <th>August</th>
-                                <th>September</th>
-                                <th>October</th>
-                                <th>November</th>
-                                <th>December</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {renderRows()}
-                        </tbody>
-                    </Table>
+                    <div className="table-responsive">
+                        <Table striped bordered hover className="small-table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>January</th>
+                                    <th>February</th>
+                                    <th>March</th>
+                                    <th>April</th>
+                                    <th>May</th>
+                                    <th>June</th>
+                                    <th>July</th>
+                                    <th>August</th>
+                                    <th>September</th>
+                                    <th>October</th>
+                                    <th>November</th>
+                                    <th>December</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {renderRows()}
+                            </tbody>
+                        </Table>
+                    </div>
                 </Tab>
             </Tabs>
         </div>

@@ -19,11 +19,11 @@ import { About } from "./components/layout/About";
 function App() {
   return (
     <Router>
-      <div className="App">
+
         <Toaster position="top-center" />
         <Header />
 
-        <div className="container my-5" style={{ height: '150px' }} >
+        <div className="container my-5"  >
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
@@ -66,7 +66,7 @@ function App() {
               }
             />
           </Routes>
-        </div>
+
       </div>
       <Footer />
     </Router>

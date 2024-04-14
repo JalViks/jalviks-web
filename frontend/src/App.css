@@ -5,7 +5,13 @@ body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  scroll-behavior: smooth;
+  overflow:auto;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Scroll Bar */
@@ -85,9 +91,75 @@ nav {
 }
 
 .footer {
-  z-index: 2;
+  margin-top: auto;
+  position: relative;
+  position: fic;
+
 }
 
+/* Define styles for screens with a maximum width of 600px (mobile) */
+@media (max-width: px) {
+  .responsive-container {
+     height: '100%'
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 30px;
+  text-align: center;
+}
+
+.flex-item-left {
+  padding: 10px;
+  flex: 50%;
+}
+
+.small-table {
+  font-size: 12px; /* Reduce the font size */
+  th, td {
+      padding: 4px; /* Reduce padding */
+  }
+}
+
+.nav-pills{
+
+padding: 7px;
+
+font-size: small;
+
+
+}
+/* Tables.css */
+.custom-tabs .nav-tabs .nav-link {
+  padding: 10px; /* Reduce padding */
+  font-size: 12px; /* Reduce font size */
+
+}
+
+.nav-pills {
+  --bs-nav-pills-border-radius: var(--bs-border-radius);
+  --bs-nav-pills-link-active-color: #fff;
+  --bs-nav-pills-link-active-bg: #198754
+}
+
+.custom-tabs .nav-tabs {
+  flex-wrap: nowrap; /* Prevent tabs from wrapping */
+}
+
+
+.flex-item-right {
+  padding: 10px;
+  flex: 50%;
+}
+
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
 
 #cart_count {
   background-color: #198754;

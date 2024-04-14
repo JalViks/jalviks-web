@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 const Footer = () => {
   return (
-    <footer className="bg-success text-light py-1 "> {/* Change background to tree green */}
+    <footer className="bg-success text-light py-1  footer"> {/* Change background to tree green */}
       <Container>
         <div className="text-center">
           <p className="py-2 mb-0">
