@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import { Tables } from './Tables';
+import MapChart from './MapChart';
+
 
 export const About = () => {
     const chartRef = useRef(null);
@@ -56,15 +58,16 @@ export const About = () => {
         
         <h1 className="text-center mt-2">Rainfall Dashboard</h1>
 
-    
+            
+        
       <div className="flex-container col-md-6">
-
             <Tables className = "flex-item-left" />
             <canvas id="rainfallChart" className = "flex-item-right"></canvas>
+            
         </div>
 
-
-
+       
+        
 
         </>
 
